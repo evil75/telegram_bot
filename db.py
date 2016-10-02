@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 import psycopg2
 from creditails import *
-def select ():
+def select (chatId):
 	conn = psycopg2.connect(database=dbName, user=dbUser, password=dbPass, host=dbHost, port=dbPort)
 	cur = conn.cursor()
-	cur.execute("SELECT * FROM %s;" % dbTable)
+	cur.execute("SELECT * FROM %s where chatid = %s;" % (dbTable, chatId)
 	all=cur.fetchall()
 	conn.commit()
 	cur.close()
@@ -18,10 +18,10 @@ def select ():
 	else:
 		string += 'теперь ты видел все=))'
 	return string
-def insert (name, description, author):
+def insert (name, description, author, chatId):
 	conn = psycopg2.connect(database=dbName, user=dbUser, password=dbPass, host=dbHost, port=dbPort)
 	cur = conn.cursor()
-	cur.execute("INSERT INTO events (name, description, author) VALUES (%s, %s, %s)", (name, description, author))
+	cur.execute("INSERT INTO events (name, description, author, chatid) VALUES (%s, %s, %s, %s)", (name, description, author, chatId))
 	conn.commit()
     	cur.close()
     	conn.close()

@@ -33,7 +33,7 @@ def fix(bot, update):
 
 
 def showall(bot, update):
-    ololo = select()
+    ololo = select(update.message.chat_id)
     bot.sendMessage(update.message.chat_id, text='%s' % ololo)
 
 
@@ -53,7 +53,7 @@ def new(bot, update):
         print(name)
     author = str(update.message.from_user.first_name) + ' ' + str(update.message.from_user.last_name) + ' ' + str(
     update.message.from_user.username)
-    insert(name, description, author)
+    insert(name, description, author, update.message.chat_id)
     showall(bot, update)
 
 
