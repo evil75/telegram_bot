@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-token='Your telegram bot token'
-dbHost='database hosr (default 127.0.0.1)'
+token='230458135:AAF1YMxxQLxzvZWv6YIi6LF8-XG6TrYmxJQ'
+dbHost='postgres'
 dbUser='postgres'
 dbPass='dbPasswd'
 dbTable="events"
