@@ -1,8 +1,9 @@
 #!/usr/bin/env python
-token='230458135:AAF1YMxxQLxzvZWv6YIi6LF8-XG6TrYmxJQ'
+import os
+token=os.environ["TOKEN"]
 dbHost='postgres'
 dbUser='postgres'
 dbPass='dbPasswd'
 dbTable="events"
 dbPort='5432'
-dbName='postgres'
+dbName='events'
