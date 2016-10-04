@@ -1,13 +1,15 @@
 version: '2'
 services:
   python:
-    build: python
+    build: ./python
     environment:
      - TOKEN
     depends_on:
      - postgres
     command: python /usr/src/app/main.py
+    container_name: python
   postgres:
-    build: postgres
+    build: ./postgres
     environment:
      - POSTGRES_PASSWORD=dbPasswd
+    container_name: postgres
