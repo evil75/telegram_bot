@@ -14,7 +14,7 @@ def select (chatId):
 	for resalt in all:
 		string=string + str(resalt[0]) + ' Название: ' + str(resalt[1]) + ' ' + 'Описание: ' + str(resalt[2]) + ' ' + 'Предложено: ' + str(resalt[3]) + '\n'
 	if string == '':
-		string='Не чего показать=(('
+		string='Нечего показать=(('
 	else:
 		string += 'теперь ты видел все=))'
 	return string
