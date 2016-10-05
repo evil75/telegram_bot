@@ -6,4 +6,4 @@ dbUser='postgres'
 dbPass='dbPasswd'
 dbTable="events"
 dbPort='5432'
-dbName='events'
+dbName='event_db'
