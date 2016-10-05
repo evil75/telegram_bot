@@ -5,7 +5,7 @@ from creditails import *
 def select (chatId):
 	conn = psycopg2.connect(database=dbName, user=dbUser, password=dbPass, host=dbHost, port=dbPort)
 	cur = conn.cursor()
-	cur.execute("SELECT * FROM %s where chatid = %s;", (dbTable, chatId))
+	cur.execute("SELECT * FROM events where chatid like '%s';" % str(chatId))
 	all=cur.fetchall()
 	conn.commit()
 	cur.close()

@@ -10,6 +10,9 @@ services:
     container_name: python
     networks:
       - telegram_bot
+    links:
+      - postgres
+    dns: 8.8.8.8
   postgres:
     build: ./postgres
     environment:

@@ -34,7 +34,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: events; Type: TABLE; Schema: public; Owner: evil_bot
+-- Name: events; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE events (
@@ -47,10 +47,10 @@ CREATE TABLE events (
 );
 
 
-ALTER TABLE events OWNER TO evil_bot;
+ALTER TABLE events OWNER TO postgres;
 
 --
--- Name: events_id_seq; Type: SEQUENCE; Schema: public; Owner: evil_bot
+-- Name: events_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE events_id_seq
@@ -61,24 +61,24 @@ CREATE SEQUENCE events_id_seq
     CACHE 1;
 
 
-ALTER TABLE events_id_seq OWNER TO evil_bot;
+ALTER TABLE events_id_seq OWNER TO postgres;
 
 --
--- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: evil_bot
+-- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE events_id_seq OWNED BY events.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: evil_bot
+-- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY events ALTER COLUMN id SET DEFAULT nextval('events_id_seq'::regclass);
 
 
 --
--- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: evil_bot
+-- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY events (id, name, description, author, users, chatid) FROM stdin;
@@ -88,7 +88,7 @@ COPY events (id, name, description, author, users, chatid) FROM stdin;
 
 
 --
--- Name: events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: evil_bot
+-- Name: events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('events_id_seq', 23, true);
