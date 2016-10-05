@@ -1,6 +1,3 @@
-creditails
+*.pyc
 .idea/
-creditails.py
-creditails.pyc
-db.pyc
 nohup.out

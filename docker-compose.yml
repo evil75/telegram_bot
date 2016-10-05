@@ -1,0 +1,26 @@
+version: '2'
+services:
+  python:
+    build: ./python
+    environment:
+     - TOKEN
+    depends_on:
+     - postgres
+    command: python /usr/src/app/main.py
+    container_name: python
+    networks:
+      - telegram_bot
+    links:
+      - postgres
+    dns: 8.8.8.8
+  postgres:
+    build: ./postgres
+    environment:
+     - POSTGRES_PASSWORD=dbPasswd
+    container_name: postgres
+    networks:
+      - telegram_bot
+
+networks:
+  telegram_bot:
+    driver: bridge
