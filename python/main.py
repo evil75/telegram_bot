@@ -84,9 +84,6 @@ def wai(bot, update):
         update.message.from_user.username)
     bot.sendMessage(update.message.chat_id, text='%s' % author)
 
-def release(bot, update):
-    bot.sendMessage(update.message.chat_id, text='Немного новых фич: появилось удаление событий (команда /rm) так же команда /new теперь воспринимает либой текст и добавились человеко читабельные ошибки. Читайте /help')
-
 def error(bot, update, error):
     logger.warn('Update "%s" caused error "%s"' % (update, error))
 
@@ -106,7 +103,6 @@ def main():
     dp.add_handler(CommandHandler("new", new))
     dp.add_handler(CommandHandler("rm", rm))
     dp.add_handler(CommandHandler("wai", wai))
-    dp.add_handler(CommandHandler("release", release))
     dp.add_handler(CommandHandler("killbot", killbot))
     dp.add_handler(CommandHandler("killseal", killseal))
     dp.add_handler(MessageHandler([Filters.text], echo))
