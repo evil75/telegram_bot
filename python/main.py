@@ -21,8 +21,8 @@ def start(bot, update):
 
 
 def echo(bot, update):
-    pat = re.compile('мур')
-    text = re.sub(pat, 'жур', update.message.text, flags=re.IGNORECASE)
+    pat = re.compile("мур")
+    text = re.sub(pat, "жур", update.message.text, flags=re.IGNORECASE)
     bot.sendMessage(update.message.chat_id, text=update.message.text)
 
 
