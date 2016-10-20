@@ -6,6 +6,7 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from db import select, insert, delete
 import logging
 from creditails import *
+import re
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -20,6 +21,8 @@ def start(bot, update):
 
 
 def echo(bot, update):
+    pat = re.compile('мур')
+    text = re.sub(pat, 'жур', update.message.text, flags=re.IGNORECASE)
     bot.sendMessage(update.message.chat_id, text=update.message.text)
 
 
