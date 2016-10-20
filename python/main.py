@@ -22,7 +22,7 @@ def start(bot, update):
 
 def echo(bot, update):
     text = re.sub("мур", "жур", update.message.text, flags=re.IGNORECASE)
-    bot.sendMessage(update.message.chat_id, text=update.message.text)
+    bot.sendMessage(update.message.chat_id, text=text)
 
 
 def help(bot, update):
